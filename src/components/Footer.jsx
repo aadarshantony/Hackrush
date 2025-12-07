@@ -1,12 +1,14 @@
+import React from 'react';
 import { Github, Instagram, Linkedin, Terminal } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="w-full bg-[#050505] border-t border-white/10 pt-16 pb-8 px-4">
+        <footer className="w-full bg-[#050505] border-t border-white/10 pt-16 pb-2 px-4">
             <div className="max-w-7xl mx-auto">
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-                    
+                {/* Top Section */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                    {/* Brand Info */}
                     <div className="space-y-4">
                         <div className="text-2xl font-bold text-cyan-400 flex items-center gap-2 font-display tracking-wide">
                             <Terminal className="w-6 h-6" />
@@ -18,10 +20,11 @@ const Footer = () => {
                         <div className="flex gap-4">
                             <SocialIcon icon={<Instagram className="w-5 h-5" />} href="https://www.instagram.com/etc.etcetera.in/" target="_blank" />
                             <SocialIcon icon={<Linkedin className="w-5 h-5" />} href="https://www.linkedin.com/groups/14608259/" target="_blank" />
-                            <SocialIcon icon={<Github className="w-5 h-5" />}  href="https://github.com/aadarshantony/Hackrush/"target="_blank" />
+                            <SocialIcon icon={<Github className="w-5 h-5" />}  href="https://github.com/aadarshantony/Hackrush/" target="_blank" />
                         </div>
                     </div>
 
+                    {/* Quick Links */}
                     <div className="flex flex-col gap-3">
                         <h4 className="text-white font-bold mb-2 font-display tracking-wide">Quick Links</h4>
                         <FooterLink href="#about">About Us</FooterLink>
@@ -30,6 +33,7 @@ const Footer = () => {
                         <FooterLink href="#prizes">Prize Pool</FooterLink>
                     </div>
 
+                    {/* Legal / Contact */}
                     <div className="flex flex-col gap-3">
                         <h4 className="text-white font-bold mb-2 font-display tracking-wide">Legal & Help</h4>
                         <FooterLink href="#rules">Code of Conduct</FooterLink>
@@ -44,9 +48,10 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="h-px w-full bg-linear-to-r from-transparent via-white/10 to-transparent mb-8"></div>
+                {/* Divider */}
+                <div className="h-px w-full bg-linear-to-r from-transparent via-white/10 to-transparent mb-4"></div>
 
-                <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left mb-2">
                     <p className="text-gray-500 text-xs">
                         &copy; 2025 Etcetera Club & IEDC. All rights reserved.
                     </p>
@@ -56,6 +61,7 @@ const Footer = () => {
     );
 };
 
+// --- Helper Components ---
 const SocialIcon = ({ icon, href, target }) => (
     <a 
         href={href} 
