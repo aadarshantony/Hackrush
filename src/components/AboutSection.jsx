@@ -49,7 +49,7 @@ const AboutSection = () => {
                 </h2>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-                    <div className="about-text space-y-6 text-left font-sans">
+                    <div className="about-text space-y-6 md:text-left font-sans text-justify">
                         <p className="text-gray-300 text-lg leading-relaxed">
                             <span className='text-cyan-400 font-bold'>Hackrush</span> is a 15-hour innovation sprint hosted by the <span className='text-purple-500 font-bold'>Etcetera Club</span> at MGM College Pampakuda.
                         </p>
@@ -72,7 +72,6 @@ const AboutSection = () => {
                                 <div className="icon-wrap mb-3 text-cyan-400 transition-all duration-300 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)]">
                                     {f.icon}
                                 </div>
-                                {/* Added font-display here */}
                                 <h3 className="text-xl font-bold text-white mb-1 font-display tracking-wide">{f.title}</h3>
                                 <p className="text-gray-400 text-xs">{f.sub}</p>
                             </div>
@@ -82,28 +81,36 @@ const AboutSection = () => {
 
                 <div className="org-section flex flex-col items-center mt-12 space-y-6">
                     <p className="text-gray-400 text-xs uppercase tracking-widest font-display">Organized by</p>
-                    <div className="flex flex-col md:flex-row gap-6 w-full justify-center">
+                    <div className="flex flex-col md:flex-row gap-6 w-full justify-center flex-wrap">
                         <div 
                             className="px-8 py-5 rounded-lg border border-cyan-500/30 bg-[#0E0C16] w-full md:w-72 text-center cursor-pointer will-change-transform"
                             onMouseEnter={(e) => gsap.to(e.currentTarget, { scale: 1.05, borderColor: "#22d3ee", boxShadow: "0 0 30px rgba(34,211,238,0.2)", duration: 0.3 })}
                             onMouseLeave={(e) => gsap.to(e.currentTarget, { scale: 1, borderColor: "rgba(34,211,238,0.3)", boxShadow: "none", duration: 0.3 })}
                         >
-                            {/* Added font-display here */}
                             <h3 className="text-xl font-bold text-cyan-400 mb-0.5 font-display tracking-wide">Etcetera Club</h3>
                             <p className="text-gray-400 text-xs">Tech Innovation Hub</p>
                         </div>
+                        
+                        <div 
+                            className="px-8 py-5 rounded-lg border border-green-500/30 bg-[#0E0C16] w-full md:w-72 text-center cursor-pointer will-change-transform"
+                            onMouseEnter={(e) => gsap.to(e.currentTarget, { scale: 1.05, borderColor: "#22c55e", boxShadow: "0 0 30px rgba(34,197,94,0.2)", duration: 0.3 })}
+                            onMouseLeave={(e) => gsap.to(e.currentTarget, { scale: 1, borderColor: "rgba(34,197,94,0.3)", boxShadow: "none", duration: 0.3 })}
+                        >
+                            <h3 className="text-xl font-bold text-green-500 mb-0.5 font-display tracking-wide">IEDC MGMCET</h3>
+                            <p className="text-gray-400 text-xs">Idea to Prototype</p>
+                        </div>
+
                         <div 
                             className="px-8 py-5 rounded-lg border border-purple-500/30 bg-[#0E0C16] w-full md:w-72 text-center cursor-pointer will-change-transform"
                             onMouseEnter={(e) => gsap.to(e.currentTarget, { scale: 1.05, borderColor: "#a855f7", boxShadow: "0 0 30px rgba(168,85,247,0.2)", duration: 0.3 })}
                             onMouseLeave={(e) => gsap.to(e.currentTarget, { scale: 1, borderColor: "rgba(168,85,247,0.3)", boxShadow: "none", duration: 0.3 })}
                         >
-                            {/* Added font-display here */}
                             <h3 className="text-xl font-bold text-purple-500 mb-0.5 font-display tracking-wide">MGM College</h3>
                             <p className="text-gray-400 text-xs">Pampakuda</p>
                         </div>
                     </div>
                     <p className="text-gray-500 text-center text-sm max-w-xl mt-6">
-                        The Etcetera Club has been at the forefront of promoting tech culture, organizing workshops, and fostering innovation among students.
+                        The Etcetera Club and IEDC have been at the forefront of promoting tech culture, organizing workshops, and fostering innovation among students.
                     </p>
                 </div>
             </div>

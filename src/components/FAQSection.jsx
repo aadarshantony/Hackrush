@@ -34,7 +34,7 @@ const FAQSection = () => {
         },
         { 
             q: "Will food be provided during the event?", 
-            a: "Yes! We will provide dinner, breakfast, snacks, and refreshments to keep you energized throughout the 15-hour sprint." 
+            a: "Yes! We will provide dinner, breakfast, snacks, and refreshments to keep you energized throughout the 15-hour sprint. (Note: Please inform the coordinators in advance if you prefer non-vegetarian options.)" 
         },
         { 
             q: "Is this a team-based hackathon?", 

@@ -14,7 +14,7 @@ import ScrollButton from "../components/ScrollButton";
 
 const Home = () => {
   return (
-    <div className="relative w-full text-white font-sans overflow-x-hidden bg-[#0E0C16]">
+    <div className="relative w-full h-full text-white font-sans overflow-x-hidden bg-[#0E0C16]">
       <div className="relative z-10 flex flex-col min-h-screen">
         <Navbar />
 

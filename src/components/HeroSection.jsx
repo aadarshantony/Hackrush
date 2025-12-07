@@ -24,21 +24,21 @@ const HeroSection = () => {
             <MouseGlow />
             <div className="relative z-10 flex flex-col items-center">
 
-                <h1 className="text-6xl md:text-9xl font-black mb-4 select-none overflow-hidden pb-2 font-display tracking-tight">
+                <h1 className="text-6xl md:text-9xl font-black mb-4 select-none overflow-hidden pb-2 font-display tracking-tight max-sm:text-5xl">
                     <span className="hero-text inline-block text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-cyan-200 drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]">HACK</span>
                     <span className="hero-text inline-block text-transparent bg-clip-text bg-linear-to-r from-fuchsia-500 to-purple-400 drop-shadow-[0_0_10px_rgba(217,70,239,0.8)] ml-2 md:ml-4">RUSH</span>
                 </h1>
 
-                <div className="hero-tagline text-lg md:text-2xl font-light tracking-widest mb-5 space-x-4 font-display uppercase">
+                <div className="hero-tagline text-lg md:text-2xl font-light tracking-widest mb-5 space-x-4 font-display uppercase max-sm:text-sm">
                     <span className="text-cyan-300">Innovate</span><span className="text-gray-500">•</span>
                     <span className="text-purple-400">Build</span><span className="text-gray-500">•</span>
                     <span className="text-pink-400">Rush Beyond Limits</span>
                 </div>
 
-                <p className="hero-sub text-gray-400 mb-10 max-w-xl mx-auto text-lg">A 15-hour hackathon by <span className="text-cyan-400 font-bold">Etcetera Club</span>, MGM College Pampakuda</p>
+                <p className="hero-sub text-gray-400 mb-10 max-w-xl mx-auto text-lg">A 15-hour hackathon by <span className="text-cyan-400 font-bold">Etcetera Club</span> & <span className="text-cyan-400 font-bold">IEDC</span>, MGM College Pampakuda</p>
 
                 <div className="hero-date inline-block mb-10 px-8 py-3 rounded-full border border-cyan-500/30 bg-cyan-900/10 backdrop-blur-sm shadow-[0_0_20px_rgba(6,182,212,0.15)]">
-                    <span className="text-cyan-300 text-lg font-display tracking-wider">JANUARY 24, 25 · 2025</span>
+                    <span className="text-cyan-300 text-lg font-display tracking-wider">JANUARY 24, 25 · 2026</span>
                 </div>
 
                 <a

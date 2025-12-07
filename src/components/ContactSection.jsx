@@ -21,7 +21,8 @@ const ContactSection = () => {
         tl.from(".section-title", { y: 30, opacity: 0, duration: 0.8, ease: "power3.out" })
           .from(".organizer-card", { y: 30, opacity: 0, stagger: 0.1, duration: 0.8 }, "-=0.6")
           .from(".social-btn", { scale: 0.9, opacity: 0, stagger: 0.05, duration: 0.6 }, "-=0.6")
-          .from(".footer-card", { y: 20, opacity: 0, duration: 0.8 }, "-=0.6");
+          // Added stagger here to animate multiple footer cards nicely
+          .from(".footer-card", { y: 20, opacity: 0, stagger: 0.1, duration: 0.8 }, "-=0.6");
 
     }, { scope: container });
 
@@ -37,12 +38,12 @@ const ContactSection = () => {
 
     return (
         <section ref={container} id="contact" className="contact relative w-full bg-[#090a0f] py-16 px-4 overflow-hidden">
-            <div className="max-w-5xl mx-auto relative z-10">
+            <div className="max-w-6xl mx-auto relative z-10">
                 <h2 className="section-title text-3xl md:text-5xl font-black text-center mb-12 uppercase tracking-wider text-white font-display">
                     Get in <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-500 to-pink-500 drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]">Touch</span>
                 </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16 max-w-5xl mx-auto">
                     <OrganizerCard name="Organizer 1" role="Asst.Prof, CSE" phone="+91 98765 43210" color="#22d3ee" hoverFn={handleCardHover} leaveFn={handleCardLeave} />
                     <OrganizerCard name="Organizer 2" role="Program Coordinator" phone="+91 98765 43211" color="#a855f7" hoverFn={handleCardHover} leaveFn={handleCardLeave} />
                     <OrganizerCard name="Organizer 3" role="Program Coordinator" phone="+91 98765 43212" color="#ec4899" hoverFn={handleCardHover} leaveFn={handleCardLeave} />
@@ -51,21 +52,47 @@ const ContactSection = () => {
                 <div className="flex flex-col items-center mb-16">
                     <h3 className="section-title text-xl font-bold text-white mb-6 font-display tracking-wide">Connect With Us</h3>
                     <div className="flex flex-wrap justify-center gap-4">
+                        <SocialButton icon={<Instagram size={18} />} text="@mgmcet_pampakuda" href="https://www.instagram.com/_mgm.college.of.eng.ernakulam_" />
                         <SocialButton icon={<Instagram size={18} />} text="@etceteraclub" href="https://www.instagram.com/etc.etcetera.in/" />
-                        <SocialButton icon={<Mail size={18} />} text="etcetera@mgmcet.ac.in" href="mailto:etcetera@mgmcet.ac.in" />
+                        <SocialButton icon={<Instagram size={18} />} text="@mgmcet_iedc" href="https://www.instagram.com/mgmcet_iedc/" />
                         <SocialButton icon={<MessageCircle size={18} />} text="WhatsApp Group" href="https://chat.whatsapp.com/Jm6lJMAs3jV23QpPv90acD" />
                     </div>
                 </div>
 
-                <div className="flex justify-center">
-                    <div 
-                        className="footer-card relative px-10 py-6 bg-[#0E0F16] rounded-xl flex flex-col items-center text-center border border-cyan-500/30 cursor-default will-change-transform"
-                        onMouseEnter={(e) => gsap.to(e.currentTarget, { scale: 1.02, borderColor: "#22d3ee", boxShadow: "0 0 30px rgba(34,211,238,0.15)", duration: 0.3 })}
-                        onMouseLeave={(e) => gsap.to(e.currentTarget, { scale: 1, borderColor: "rgba(34,211,238,0.3)", boxShadow: "none", duration: 0.3 })}
-                    >
-                        <span className="text-gray-400 text-xs mb-1 font-display tracking-wider">Organized by</span>
-                        <h4 className="text-2xl font-black text-cyan-400 mb-0.5 tracking-wide uppercase font-display">Etcetera Club</h4>
-                        <p className="text-gray-500 text-xs">MGM College Pampakuda</p>
+                {/* Organizer Footer Section */}
+                <div className="flex flex-col items-center space-y-4">
+                     <span className="section-title text-gray-400 text-xs mb-2 font-display tracking-widest uppercase">Organized by</span>
+                     
+                     <div className="flex flex-col md:flex-row justify-center gap-6 w-full flex-wrap">
+                        {/* Etcetera Club Card */}
+                        <div 
+                            className="footer-card relative px-10 py-6 bg-[#0E0F16] rounded-xl flex flex-col items-center text-center border border-cyan-500/30 cursor-default will-change-transform w-full md:w-auto min-w-[280px]"
+                            onMouseEnter={(e) => gsap.to(e.currentTarget, { scale: 1.02, borderColor: "#22d3ee", boxShadow: "0 0 30px rgba(34,211,238,0.15)", duration: 0.3 })}
+                            onMouseLeave={(e) => gsap.to(e.currentTarget, { scale: 1, borderColor: "rgba(34,211,238,0.3)", boxShadow: "none", duration: 0.3 })}
+                        >
+                            <h4 className="text-xl font-black text-cyan-400 mb-0.5 tracking-wide uppercase font-display">Etcetera Club</h4>
+                            <p className="text-gray-500 text-xs">Tech Innovation Hub</p>
+                        </div>
+
+                        {/* IEDC Card */}
+                        <div 
+                            className="footer-card relative px-10 py-6 bg-[#0E0F16] rounded-xl flex flex-col items-center text-center border border-green-500/30 cursor-default will-change-transform w-full md:w-auto min-w-[280px]"
+                            onMouseEnter={(e) => gsap.to(e.currentTarget, { scale: 1.02, borderColor: "#22c55e", boxShadow: "0 0 30px rgba(34,197,94,0.15)", duration: 0.3 })}
+                            onMouseLeave={(e) => gsap.to(e.currentTarget, { scale: 1, borderColor: "rgba(34,197,94,0.3)", boxShadow: "none", duration: 0.3 })}
+                        >
+                            <h4 className="text-xl font-black text-green-500 mb-0.5 tracking-wide uppercase font-display">IEDC MGMCET</h4>
+                            <p className="text-gray-500 text-xs">Idea to Prototype</p>
+                        </div>
+
+                        {/* MGM College Card */}
+                        <div 
+                            className="footer-card relative px-10 py-6 bg-[#0E0F16] rounded-xl flex flex-col items-center text-center border border-purple-500/30 cursor-default will-change-transform w-full md:w-auto min-w-[280px]"
+                            onMouseEnter={(e) => gsap.to(e.currentTarget, { scale: 1.02, borderColor: "#a855f7", boxShadow: "0 0 30px rgba(168,85,247,0.15)", duration: 0.3 })}
+                            onMouseLeave={(e) => gsap.to(e.currentTarget, { scale: 1, borderColor: "rgba(168,85,247,0.3)", boxShadow: "none", duration: 0.3 })}
+                        >
+                            <h4 className="text-xl font-black text-purple-500 mb-0.5 tracking-wide uppercase font-display">MGM College</h4>
+                            <p className="text-gray-500 text-xs">Pampakuda</p>
+                        </div>
                     </div>
                 </div>
 
