@@ -28,7 +28,7 @@ const Home = () => {
         <FAQSection />
         <ContactSection />
         <Footer />
-        {/* <ScrollButton /> */}
+        <ScrollButton />
       </div>
     </div>
   );
