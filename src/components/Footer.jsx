@@ -3,7 +3,7 @@ import { Github, Instagram, Linkedin, Terminal } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="w-full bg-[#050505] border-t border-white/10 pt-16 px-4">
+        <footer className="w-full bg-[#050505] border-t border-white/10 pt-16 pb-2 px-4">
             <div className="max-w-7xl mx-auto">
                 
                 {/* Top Section */}
