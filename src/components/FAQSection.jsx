@@ -29,16 +29,20 @@ const FAQSection = () => {
             a: "HACKRUSH is open to all college students who are passionate about technology and innovation. You don't need to be a pro coder to join!" 
         },
         { 
+            q: "Is there a registration fee?", 
+            a: "Yes, the registration fee is ₹99 per head. (e.g., A team of 4 pays ₹396)." 
+        },
+        { 
+            q: "Is this a team-based hackathon?", 
+            a: "Yes, you can participate in teams of 2 to 4 members. Collaboration is key!" 
+        },
+        { 
             q: "What should I bring to the hackathon?", 
             a: "Bring your laptop, charger, student ID, and any hardware you might need for your project. Don't forget your enthusiasm!" 
         },
         { 
             q: "Will food be provided during the event?", 
             a: "Yes! We will provide dinner, breakfast, snacks, and refreshments to keep you energized throughout the 15-hour sprint. (Note: Please inform the coordinators in advance if you prefer non-vegetarian options.)" 
-        },
-        { 
-            q: "Is this a team-based hackathon?", 
-            a: "Yes, you can participate in teams of 2 to 4 members. Collaboration is key!" 
         },
         { 
             q: "Can beginners participate?", 
@@ -93,7 +97,7 @@ const FAQItem = ({ question, answer }) => {
         <div className="faq-item border border-white/10 rounded-xl bg-[#13131d] overflow-hidden transition-colors hover:border-cyan-500/30">
             <button 
                 onClick={toggleOpen}
-                className="w-full flex items-center justify-between p-5 text-left focus:outline-none"
+                className="w-full flex items-center justify-between p-5 text-left focus:outline-none cursor-pointer"
             >
                 <span className="text-lg font-bold text-white font-display tracking-wide pr-4">{question}</span>
                 <div ref={iconRef} className="text-cyan-400 shrink-0">

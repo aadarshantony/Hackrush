@@ -89,7 +89,7 @@ const PrizeSection = () => {
                             </div>
                         </div>
                         <div className="flex gap-2 flex-wrap justify-center">
-                            {["📜 Certificates", "🎯 KTU-Points", "🍕 Food & Drinks", "🏷️ Club-Card"].map((perk, i) => (
+                            {["📜 Certificates", "🎯 KTU-Points", "🍕 Food & Drinks", "🏷️ Swags"].map((perk, i) => (
                                 <span key={i} className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300">
                                     {perk}
                                 </span>
@@ -120,7 +120,7 @@ const PodiumCard = ({ rank, amount, color, isWinner, icon, isWrapped }) => {
             <div className="mb-3 p-3 rounded-full bg-black/30 border border-white/5">{icon}</div>
             <span className={`text-xs font-bold uppercase tracking-widest mb-1 font-display ${textColors[color]}`}>{rank}</span>
             <h3 className="text-3xl md:text-4xl font-black text-white font-display tracking-wider mb-1">{amount}</h3>
-            {isWinner && <span className="text-[10px] text-yellow-500/80 font-medium tracking-wide">+ Exclusive Trophy</span>}
+            {isWinner && <span className="text-[10px] text-yellow-500/80 font-medium tracking-wide">+ Exclusive Certificate</span>}
         </div>
     );
 };

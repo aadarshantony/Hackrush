@@ -47,7 +47,7 @@ const VenueSection = () => {
                             </p>
 
                             <a 
-                                href="https://goo.gl/maps/YourMapLinkHere" 
+                                href="https://maps.app.goo.gl/9BCVGQxhicmKEnKB7" 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 className="w-full py-3 rounded-lg bg-linear-to-r from-cyan-600 to-blue-600 text-white text-sm font-bold flex items-center justify-center gap-2 hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] transition-all duration-300 transform hover:-translate-y-0.5 font-display tracking-wide"
