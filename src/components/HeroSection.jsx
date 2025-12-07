@@ -19,7 +19,7 @@ const HeroSection = () => {
     }, { scope: container });
 
     return (
-        <main ref={container} id='home' className="relative grow flex flex-col items-center justify-center text-center px-4 pt-20 min-h-screen overflow-hidden">
+        <main ref={container} id='home' className="relative grow flex flex-col items-center justify-center text-center px-4 min-h-screen overflow-hidden">
             <div className="absolute inset-0 z-0 pointer-events-none"><ParticlesBackground /></div>
             <MouseGlow />
             <div className="relative z-10 flex flex-col items-center">
