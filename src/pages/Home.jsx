@@ -14,7 +14,7 @@ import ScrollButton from "../components/ScrollButton";
 
 const Home = () => {
   return (
-    <div className="relative w-full text-white font-sans overflow-x-hidden bg-[#0E0C16]">
+    <div className="w-full text-white font-sans overflow-x-hidden bg-[#0E0C16]">
       <Navbar />
       <HeroSection />
       <AboutSection />
