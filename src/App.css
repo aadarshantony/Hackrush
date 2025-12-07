@@ -6,15 +6,21 @@
   --font-display: "Orbitron", sans-serif;
 }
 
-html, body {
-  background-color: #0E0C16; 
-  
-  margin: 0;
-  padding: 0;
-  
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overscroll-behavior-y: none !important;
   width: 100%;
-  min-height: 100%;
-  overscroll-behavior-y: none;
+  height: 100%;
+  background-color: #0E0C16;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 html.lenis {
