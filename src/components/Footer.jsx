@@ -38,6 +38,9 @@ const Footer = () => {
                         <a href="mailto:etcetera@mgmcet.ac.in" className="text-cyan-400 text-sm hover:underline mt-2">
                             etcetera@mgmcet.ac.in
                         </a>
+                        <a href="mailto:iedc@mgmcet.ac.in" className="text-cyan-400 text-sm hover:underline mt-2">
+                            iedc@mgmcet.ac.in
+                        </a>
                     </div>
                 </div>
 
@@ -45,7 +48,7 @@ const Footer = () => {
 
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
                     <p className="text-gray-500 text-xs">
-                        &copy; 2025 Etcetera Club. All rights reserved.
+                        &copy; 2025 Etcetera Club & IEDC. All rights reserved.
                     </p>
                 </div>
             </div>
