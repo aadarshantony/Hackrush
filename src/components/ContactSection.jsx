@@ -90,7 +90,7 @@ const ContactSection = () => {
                             onMouseEnter={(e) => gsap.to(e.currentTarget, { scale: 1.02, borderColor: "#a855f7", boxShadow: "0 0 30px rgba(168,85,247,0.15)", duration: 0.3 })}
                             onMouseLeave={(e) => gsap.to(e.currentTarget, { scale: 1, borderColor: "rgba(168,85,247,0.3)", boxShadow: "none", duration: 0.3 })}
                         >
-                            <h4 className="text-xl font-black text-purple-500 mb-0.5 tracking-wide uppercase font-display">MGM College</h4>
+                            <h4 className="text-xl font-black text-purple-500 mb-0.5 tracking-wide uppercase font-display">MGMCET</h4>
                             <p className="text-gray-500 text-xs">Pampakuda</p>
                         </div>
                     </div>

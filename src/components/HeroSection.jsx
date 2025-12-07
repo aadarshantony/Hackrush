@@ -35,7 +35,7 @@ const HeroSection = () => {
                     <span className="text-pink-400">Rush Beyond Limits</span>
                 </div>
 
-                <p className="hero-sub text-gray-400 mb-10 max-w-xl mx-auto text-lg max-sm:text-sm">A 15-hour hackathon by <span className="text-cyan-400 font-bold">Etcetera Club</span> & <span className="text-cyan-400 font-bold">IEDC</span>, MGM College Pampakuda</p>
+                <p className="hero-sub text-gray-400 mb-10 max-w-xl mx-auto text-lg max-sm:text-sm">A 15-hour hackathon by <span className="text-cyan-400 font-bold">Etcetera Club</span> & <span className="text-cyan-400 font-bold">IEDC</span>, MGMCET Pampakuda</p>
 
                 <div className="hero-date inline-block mb-10 px-8 py-3 max-sm:py-2 rounded-full border border-cyan-500/30 bg-cyan-900/10 backdrop-blur-sm shadow-[0_0_20px_rgba(6,182,212,0.15)]">
                     <span className="text-cyan-300 text-lg font-display tracking-wider max-sm:text-sm">JANUARY 24, 25 · 2026</span>

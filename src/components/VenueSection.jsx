@@ -39,7 +39,7 @@ const VenueSection = () => {
                             </div>
                             
                             <h3 className="text-2xl font-bold text-white mb-1 leading-tight font-display tracking-wide">
-                                MGM College of <br/>Engineering
+                                MGM College of <br/>Engineering & Technology
                             </h3>
                             <p className="text-gray-400 text-sm mb-5 border-l-2 border-purple-500 pl-3">
                                 Pampakuda, Memury,<br/>
