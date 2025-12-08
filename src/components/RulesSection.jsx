@@ -32,7 +32,7 @@ const RulesSection = () => {
     };
 
     const rules = [
-        { icon: <Users size={20} />, title: "Team Size", desc: "Teams of 2-4 members allowed. Individual participation permitted.", color: "#22d3ee", textColor: "text-cyan-400" },
+        { icon: <Users size={20} />, title: "Team Size", desc: "Teams of 2-4 members only. Individual participation is not permitted.", color: "#22d3ee", textColor: "text-cyan-400" },
         { icon: <Terminal size={20} />, title: "Tools & Tech", desc: "Any stack allowed. Open-source libraries encouraged.", color: "#a855f7", textColor: "text-purple-500" },
         { 
             icon: <Scale size={20} />, title: "Judging Criteria", isList: true, 
