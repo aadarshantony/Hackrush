@@ -105,7 +105,7 @@ const AboutSection = () => {
                             onMouseEnter={(e) => gsap.to(e.currentTarget, { scale: 1.05, borderColor: "#a855f7", boxShadow: "0 0 30px rgba(168,85,247,0.2)", duration: 0.3 })}
                             onMouseLeave={(e) => gsap.to(e.currentTarget, { scale: 1, borderColor: "rgba(168,85,247,0.3)", boxShadow: "none", duration: 0.3 })}
                         >
-                            <h3 className="text-xl font-bold text-purple-500 mb-0.5 font-display tracking-wide">MGM College</h3>
+                            <h3 className="text-xl font-bold text-purple-500 mb-0.5 font-display tracking-wide">MGMCET</h3>
                             <p className="text-gray-400 text-xs">Pampakuda</p>
                         </div>
                     </div>
