@@ -18,7 +18,7 @@ const WhyParticipateSection = () => {
             }
         });
         tl.from(".section-title", { y: 30, opacity: 0, duration: 0.8, ease: "power3.out" })
-          .from(".benefit-card", { y: 30, opacity: 0, stagger: 0.1, duration: 0.8 }, "-=0.4");
+            .from(".benefit-card", { y: 30, opacity: 0, stagger: 0.1, duration: 0.8 }, "-=0.4");
     }, { scope: container });
 
     const handleHover = (e, color) => {
@@ -32,41 +32,41 @@ const WhyParticipateSection = () => {
     };
 
     const benefits = [
-        { 
-            icon: <Rocket size={24} />, 
-            title: "Boost Your Skills", 
-            desc: "Level up your technical abilities through hands-on experience.", 
-            color: "#22d3ee" 
+        {
+            icon: <Rocket size={24} />,
+            title: "Boost Your Skills",
+            desc: "Level up your technical abilities through hands-on experience.",
+            color: "#22d3ee"
         },
-        { 
-            icon: <Brain size={24} />, 
-            title: "Learn by Building", 
-            desc: "Transform ideas into working prototypes in just 15 hours.", 
-            color: "#a855f7" 
+        {
+            icon: <Brain size={24} />,
+            title: "Learn by Building",
+            desc: "Transform ideas into working prototypes in just 16 hours.",
+            color: "#a855f7"
         },
-        { 
-            icon: <Users size={24} />, 
-            title: "Network & Collaborate", 
-            desc: "Connect with like-minded innovators and industry mentors.", 
-            color: "#ec4899" 
+        {
+            icon: <Users size={24} />,
+            title: "Network & Collaborate",
+            desc: "Connect with like-minded innovators and industry mentors.",
+            color: "#ec4899"
         },
-        { 
-            icon: <Trophy size={24} />, 
-            title: "₹10,000 Prize Pool", 
-            desc: "Compete for exciting cash prizes and recognition.", 
-            color: "#22d3ee" 
+        {
+            icon: <Trophy size={24} />,
+            title: "₹10,000 Prize Pool",
+            desc: "Compete for exciting cash prizes and recognition.",
+            color: "#22d3ee"
         },
-        { 
-            icon: <Puzzle size={24} />, 
-            title: "Solve Real Challenges", 
-            desc: "Tackle real-world problems with creative solutions.", 
-            color: "#a855f7" 
+        {
+            icon: <Puzzle size={24} />,
+            title: "Solve Real Challenges",
+            desc: "Tackle real-world problems with creative solutions.",
+            color: "#a855f7"
         },
-        { 
-            icon: <Award size={24} />, 
-            title: "Certificates for All", 
-            desc: "Participation certificates for all, plus special recognition for top teams.", 
-            color: "#ec4899" 
+        {
+            icon: <Award size={24} />,
+            title: "Certificates for All",
+            desc: "Participation certificates for all, plus special recognition for top teams.",
+            color: "#ec4899"
         }
     ];
 
@@ -78,7 +78,7 @@ const WhyParticipateSection = () => {
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                     {benefits.map((b, i) => (
-                        <div key={i} 
+                        <div key={i}
                             className="benefit-card p-5 rounded-xl bg-[#0E0F16] border border-white/10 cursor-pointer will-change-transform"
                             onMouseEnter={(e) => handleHover(e, b.color)}
                             onMouseLeave={handleLeave}
