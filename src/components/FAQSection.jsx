@@ -26,7 +26,7 @@ const FAQSection = () => {
     const faqs = [
         { 
             q: "Who can participate in HACKRUSH?", 
-            a: "HACKRUSH is open to all college students who are passionate about technology and innovation. You don't need to be a pro coder to join!" 
+            a: "Are you an Engineering, Polytechnic, or Degree student with an idea to share? HACKRUSH is looking for you! We believe in innovation over expertise, so don't worry if you aren't a pro coder yet—just bring your creativity." 
         },
         { 
             q: "Is there a registration fee?", 
