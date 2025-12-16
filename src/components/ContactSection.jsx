@@ -1,40 +1,15 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin"; // Make sure this is imported
-import { Phone, Instagram, MessageCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Phone, Instagram, MessageCircle } from 'lucide-react';
 
-// Register plugins
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger);
 
 const ContactSection = () => {
     const container = useRef(null);
-    const scrollContainerRef = useRef(null);
-    const autoScrollTl = useRef(null);
 
-    // --- Auto-Scroll Logic ---
-    const setupAutoScroll = () => {
-        if (!scrollContainerRef.current) return;
-
-        const scroller = scrollContainerRef.current;
-        const scrollDistance = scroller.scrollWidth - scroller.clientWidth;
-
-        if (scrollDistance <= 0) return;
-
-        if (autoScrollTl.current) autoScrollTl.current.kill();
-
-        autoScrollTl.current = gsap.to(scroller, {
-            scrollTo: { x: scrollDistance },
-            duration: scrollDistance / 50,
-            ease: "none",
-            repeat: -1,
-            yoyo: true,
-            paused: false
-        });
-    };
-
-    // --- GSAP Animations ---
+    // --- GSAP Entry Animations ---
     useGSAP(() => {
         const tl = gsap.timeline({
             scrollTrigger: {
@@ -45,55 +20,27 @@ const ContactSection = () => {
         });
 
         tl.from(".section-title", { y: 30, opacity: 0, duration: 0.8, ease: "power3.out" })
-            .from(scrollContainerRef.current, { y: 30, opacity: 0, duration: 0.8 }, "-=0.6")
-            .from(".scroll-btn", { scale: 0, opacity: 0, stagger: 0.1, duration: 0.4, ease: "back.out(1.7)" }, "-=0.4")
+            .from(".organizer-card", { 
+                y: 50, 
+                opacity: 0, 
+                stagger: 0.1, 
+                duration: 0.8, 
+                ease: "back.out(1.7)" 
+            }, "-=0.4")
             .from(".social-btn", { scale: 0.9, opacity: 0, stagger: 0.05, duration: 0.6 }, "-=0.6")
-            .from(".footer-card", { y: 20, opacity: 0, stagger: 0.1, duration: 0.8 }, "-=0.6")
-            .add(() => setupAutoScroll());
+            .from(".footer-card", { y: 20, opacity: 0, stagger: 0.1, duration: 0.8 }, "-=0.6");
 
     }, { scope: container });
 
-    useEffect(() => {
-        const handleResize = () => setupAutoScroll();
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-            if (autoScrollTl.current) autoScrollTl.current.kill();
-        };
-    }, []);
-
-    // --- Event Handlers ---
+    // --- Hover Handlers ---
     const handleCardHover = (e, color) => {
-        if (autoScrollTl.current) autoScrollTl.current.pause();
         gsap.to(e.currentTarget, { scale: 1.05, borderColor: color, boxShadow: `0 0 20px ${color}20`, backgroundColor: "rgba(255,255,255,0.03)", duration: 0.3 });
         gsap.to(e.currentTarget.querySelector(".icon-circle"), { scale: 1.1, backgroundColor: `${color}20`, color: color, duration: 0.3 });
     };
 
     const handleCardLeave = (e, defaultColor) => {
-        if (autoScrollTl.current) autoScrollTl.current.play();
         gsap.to(e.currentTarget, { scale: 1, borderColor: "rgba(255,255,255,0.05)", boxShadow: "none", backgroundColor: "#0E0F16", duration: 0.3 });
         gsap.to(e.currentTarget.querySelector(".icon-circle"), { scale: 1, backgroundColor: "rgba(255,255,255,0.05)", color: defaultColor, duration: 0.3 });
-    };
-
-    const scroll = (direction) => {
-        if (autoScrollTl.current) autoScrollTl.current.pause();
-        const scroller = scrollContainerRef.current;
-        const scrollAmount = scroller.clientWidth / 1.5;
-        const currentScroll = scroller.scrollLeft;
-        const newPos = direction === 'left'
-            ? Math.max(0, currentScroll - scrollAmount)
-            : Math.min(scroller.scrollWidth - scroller.clientWidth, currentScroll + scrollAmount);
-
-        gsap.to(scroller, {
-            scrollTo: { x: newPos },
-            duration: 0.5,
-            ease: "power2.out",
-            onComplete: () => {
-                setTimeout(() => {
-                    if (autoScrollTl.current) autoScrollTl.current.play();
-                }, 1000);
-            }
-        });
     };
 
     // --- Organizer Data ---
@@ -106,27 +53,33 @@ const ContactSection = () => {
 
     return (
         <section ref={container} id="contact" className="contact relative w-full bg-[#090a0f] py-16 px-4 overflow-hidden">
+            
+            {/* Custom Scrollbar Styles */}
+            <style>{`
+                .custom-scrollbar::-webkit-scrollbar {
+                    height: 8px;
+                }
+                .custom-scrollbar::-webkit-scrollbar-track {
+                    background: #13131d; 
+                    border-radius: 4px;
+                }
+                .custom-scrollbar::-webkit-scrollbar-thumb {
+                    background: #334155; 
+                    border-radius: 4px;
+                }
+                .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                    background: #22d3ee; 
+                }
+            `}</style>
+
             <div className="max-w-6xl mx-auto relative z-10">
                 <h2 className="section-title text-3xl md:text-5xl font-black text-center mb-12 uppercase tracking-wider text-white font-display">
-                    Get in <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-500 to-pink-500 drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]">Touch</span>
+                    Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]">Touch</span>
                 </h2>
 
-                <div className="relative max-w-5xl mx-auto mb-16 group">
-                    <button
-                        onClick={() => scroll('left')}
-                        className="scroll-btn absolute left-2 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-[#0E0F16] border border-cyan-500/50 text-cyan-400 shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:bg-cyan-400 hover:text-black transition-all cursor-pointer"
-                        aria-label="Scroll Left"
-                    >
-                        <ChevronLeft size={24} />
-                    </button>
-
-                    {/* Scroll Container */}
-                    <div
-                        ref={scrollContainerRef}
-                        className="flex gap-5 overflow-x-auto pb-8 pt-4 px-4 snap-x snap-mandatory no-scrollbar"
-                        onMouseEnter={() => autoScrollTl.current && autoScrollTl.current.pause()}
-                        onMouseLeave={() => autoScrollTl.current && autoScrollTl.current.play()}
-                    >
+                {/* Organizer Cards with Scrollbar */}
+                <div className="relative max-w-5xl mx-auto mb-16">
+                    <div className="custom-scrollbar flex gap-5 overflow-x-auto pb-6 pt-4 px-4 snap-x snap-mandatory">
                         {organizers.map((org, index) => (
                             <div key={index} className="snap-center">
                                 <OrganizerCard
@@ -137,18 +90,9 @@ const ContactSection = () => {
                             </div>
                         ))}
                     </div>
-
-                    {/* Right Scroll Button - FIXED: Positioned inside (right-2) with high z-index */}
-                    <button
-                        onClick={() => scroll('right')}
-                        className="scroll-btn absolute right-2 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-[#0E0F16] border border-cyan-500/50 text-cyan-400 shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:bg-cyan-400 hover:text-black transition-all cursor-pointer"
-                        aria-label="Scroll Right"
-                    >
-                        <ChevronRight size={24} />
-                    </button>
                 </div>
 
-                {/* --- Social Media & Footer (Unchanged) --- */}
+                {/* --- Social Media --- */}
                 <div className="flex flex-col items-center mb-16">
                     <h3 className="section-title text-xl font-bold text-white mb-6 font-display tracking-wide">Connect With Us</h3>
                     <div className="flex flex-wrap justify-center gap-4">
@@ -159,6 +103,7 @@ const ContactSection = () => {
                     </div>
                 </div>
 
+                {/* --- Footer Organizers --- */}
                 <div className="flex flex-col items-center space-y-4">
                     <span className="section-title text-gray-400 text-xs mb-2 font-display tracking-widest uppercase">Organized by</span>
                     <div className="flex flex-col md:flex-row justify-center gap-6 w-full flex-wrap">
