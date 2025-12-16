@@ -20,7 +20,6 @@ const Footer = () => {
                         <div className="flex gap-4">
                             <SocialIcon icon={<Instagram className="w-5 h-5" />} href="https://www.instagram.com/etc.etcetera.in/" target="_blank" />
                             <SocialIcon icon={<Linkedin className="w-5 h-5" />} href="https://www.linkedin.com/groups/14608259/" target="_blank" />
-                            <SocialIcon icon={<Github className="w-5 h-5" />}  href="https://github.com/aadarshantony/Hackrush/" target="_blank" />
                         </div>
                     </div>
 
@@ -36,7 +35,7 @@ const Footer = () => {
                     {/* Legal / Contact */}
                     <div className="flex flex-col gap-3">
                         <h4 className="text-white font-bold mb-2 font-display tracking-wide">Legal & Help</h4>
-                        <FooterLink href="#rules">Code of Conduct</FooterLink>
+                        <FooterLink href="/code-of-conduct">Code of Conduct</FooterLink>
                         <FooterLink href="#faq">FAQs</FooterLink>
                         <FooterLink href="#contact">Contact Support</FooterLink>
                         <a href="mailto:etcetera@mgmcet.ac.in" className="text-cyan-400 text-sm hover:underline mt-2">

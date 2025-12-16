@@ -22,7 +22,6 @@ const Home = () => {
       <ThemesSection />
       <PrizeSection />
       <EventScheduleSection />
-      <RulesSection />
       <VenueSection />
       <FAQSection />
       <ContactSection />
