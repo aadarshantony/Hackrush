@@ -15,7 +15,7 @@ const Footer = () => {
                             HACK<span className="text-white">RUSH</span>
                         </div>
                         <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-                            A 15-hour innovation sprint to build, break, and create the future. Hosted by Etcetera Club, MGM College.
+                            A 16-hour innovation sprint to build, break, and create the future. Hosted by Etcetera Club, MGM College.
                         </p>
                         <div className="flex gap-4">
                             <SocialIcon icon={<Instagram className="w-5 h-5" />} href="https://www.instagram.com/etc.etcetera.in/" target="_blank" />
