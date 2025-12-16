@@ -30,7 +30,7 @@ const FAQSection = () => {
         },
         { 
             q: "Is there a registration fee?", 
-            a: "Yes, the registration fee is ₹99 per head. (e.g., A team of 4 pays ₹396)." 
+            a: "Yes, the registration fee is ₹149 per head. (e.g., A team of 4 pays ₹596)." 
         },
         { 
             q: "Is this a team-based hackathon?", 
@@ -42,7 +42,7 @@ const FAQSection = () => {
         },
         { 
             q: "Will food be provided during the event?", 
-            a: "Yes! We will provide dinner, breakfast, snacks, and refreshments to keep you energized throughout the 15-hour sprint. (Note: Please inform the coordinators in advance if you prefer non-vegetarian options.)" 
+            a: "Yes! We will provide dinner, breakfast, snacks, and refreshments to keep you energized throughout the 16-hour sprint. (Note: Please inform the coordinators in advance if you prefer non-vegetarian options.)" 
         },
         { 
             q: "Can beginners participate?", 

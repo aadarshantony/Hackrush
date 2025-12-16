@@ -52,7 +52,7 @@ const EventScheduleSection = () => {
             events: [
                 { time: "2:30 PM", title: "Registration & Check-in", description: "Report to venue & kit collection.", icon: <MapPin className="w-4 h-4 text-cyan-400" /> },
                 { time: "3:30 PM", title: "Opening Ceremony", description: "Welcome address & theme reveal.", icon: <Mic className="w-4 h-4 text-purple-500" /> },
-                { time: "4:00 PM", title: "Hacking Begins!", description: "The 15-hour sprint starts now.", icon: <Code className="w-4 h-4 text-pink-500" /> },
+                { time: "4:00 PM", title: "Hacking Begins!", description: "The 16-hour sprint starts now.", icon: <Code className="w-4 h-4 text-pink-500" /> },
                 { time: "7:30 PM", title: "Checkpoint 1", description: "First mentorship review.", icon: <CheckCircle className="w-4 h-4 text-cyan-400" /> },
                 { time: "8:00 PM", title: "Dinner Break", description: "Refuel with food & music.", icon: <Utensils className="w-4 h-4 text-purple-500" /> },
                 { time: "11:30 PM", title: "Checkpoint 2", description: "Mid-hackathon check-in.", icon: <CheckCircle className="w-4 h-4 text-pink-500" /> }
@@ -62,11 +62,12 @@ const EventScheduleSection = () => {
             day: "Day 2",
             date: "January 24th",
             events: [
-                { time: "12:00 AM", title: "Fun Zone", description: "Midnight games & activities.", icon: <Gamepad2 className="w-4 h-4 text-cyan-400" /> },
-                { time: "8:00 AM", title: "Breakfast", description: "Morning fuel for final stretch.", icon: <Coffee className="w-4 h-4 text-purple-500" /> },
-                { time: "9:00 AM", title: "Submission", description: "Upload repos & presentations.", icon: <Upload className="w-4 h-4 text-pink-500" /> },
-                { time: "10:00 AM", title: "Judging", description: "Present to the panel.", icon: <Award className="w-4 h-4 text-cyan-400" /> },
-                { time: "11:30 AM", title: "Closing Ceremony", description: "Winners & Prize Distribution.", icon: <Sparkles className="w-4 h-4 text-purple-500" /> }
+                { time: "12:00 AM", title: "Fun Zone", description: "Midnight games & activities.", icon: <CheckCircle className="w-4 h-4 text-pink-500" /> },
+                { time: "6:00 AM", title: "Checkpoint 3", description: "Final check-in.", icon: <Gamepad2 className="w-4 h-4 text-cyan-400" /> },
+                { time: "7:00 AM", title: "Breakfast", description: "Morning fuel for final stretch.", icon: <Coffee className="w-4 h-4 text-purple-500" /> },
+                { time: "8:00 AM", title: "Submission", description: "Upload repos & presentations.", icon: <Upload className="w-4 h-4 text-pink-500" /> },
+                { time: "8:30 AM", title: "Judging", description: "Present to the panel.", icon: <Award className="w-4 h-4 text-cyan-400" /> },
+                { time: "9:30 AM", title: "Closing Ceremony", description: "Winners & Prize Distribution.", icon: <Sparkles className="w-4 h-4 text-purple-500" /> }
             ]
         }
     ];

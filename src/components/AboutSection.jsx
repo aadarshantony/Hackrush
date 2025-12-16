@@ -35,7 +35,7 @@ const AboutSection = () => {
     };
 
     const features = [
-        { icon: <LightningIcon />, title: "15 Hours", sub: "Non-stop sprint" },
+        { icon: <LightningIcon />, title: "16 Hours", sub: "Non-stop sprint" },
         { icon: <TeamIcon />, title: "Teamwork", sub: "Collaborate & create" },
         { icon: <BulbIcon />, title: "Innovation", sub: "Push boundaries" },
         { icon: <RocketIcon />, title: "Rapid Build", sub: "Prototype to product" }
@@ -51,7 +51,7 @@ const AboutSection = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
                     <div className="about-text space-y-6 md:text-left font-sans text-justify">
                         <p className="text-gray-300 text-lg leading-relaxed">
-                            <span className='text-cyan-400 font-bold'>Hackrush</span> is a 15-hour innovation sprint hosted by the <span className='text-purple-500 font-bold'>Etcetera Club</span> & <span className='text-pink-500 font-bold'>IEDC</span> at MGMCET Pampakuda.
+                            <span className='text-cyan-400 font-bold'>Hackrush</span> is a 16-hour innovation sprint hosted by the <span className='text-purple-500 font-bold'>Etcetera Club</span> & <span className='text-pink-500 font-bold'>IEDC</span> at MGMCET Pampakuda.
                         </p>
                         <p className="text-gray-300 text-lg leading-relaxed">
                             Students come together to build, brainstorm, and create impactful tech solutions in a highly charged, futuristic environment.
