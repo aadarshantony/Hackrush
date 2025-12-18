@@ -45,7 +45,7 @@ const ContactSection = () => {
 
     // --- Organizer Data ---
     const organizers = [
-        { name: "Saranya Sasi", role: "Staff Incharge, ETC & IEDC", phone: "+91 99951 49182", color: "#22d3ee" },
+        { name: "Shreya Ginson", role: "Staff Incharge, ETC & IEDC", phone: "+91 93834 93401", color: "#22d3ee" },
         { name: "Gokul Krishna", role: "Staff Incharge, IEDC", phone: "+91 99474 57338", color: "#a855f7" },
         { name: "Adarsh Antony", role: "Student Coordinator", phone: "+91 79074 82690", color: "#ec4899" },
         { name: "Sana Meharin K", role: "Student Coordinator", phone: "+91 85907 58530", color: "#22c55e" },
