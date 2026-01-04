@@ -17,7 +17,7 @@ const Navbar = () => {
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
-    const navItems = ["About", "Rules", "Prizes", "Themes", "Schedule", "FAQ", "Contact"];
+    const navItems = ["About","Sponsors", "Rules", "Prizes", "Themes", "Schedule", "FAQ", "Contact"];
 
     return (
         <nav

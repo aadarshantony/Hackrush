@@ -11,6 +11,7 @@ import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
 import FAQSection from "../components/FAQSection";
 import ScrollButton from "../components/ScrollButton";
+import Sponsors from "../components/Sponsors";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <Navbar />
       <HeroSection />
       <AboutSection />
+      <Sponsors />
       <WhyParticipateSection />
       <ThemesSection />
       <PrizeSection />

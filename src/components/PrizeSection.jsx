@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Trophy, Crown, Lightbulb, Gift } from 'lucide-react';
+import { Trophy, Crown, Lightbulb, Gift, Mic2, Star, Zap } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,6 +20,7 @@ const PrizeSection = () => {
 
         tl.from(".prize-title", { y: 30, opacity: 0, duration: 0.8, ease: "power3.out" })
           .from(".podium-card", { y: 50, opacity: 0, stagger: 0.2, duration: 1, ease: "elastic.out(1, 0.6)" }, "-=0.5")
+          .from(".elevenlabs-card", { y: 20, opacity: 0, stagger: 0.1, duration: 0.8 }, "-=0.4")
           .from(".category-card", { scale: 0.9, opacity: 0, duration: 0.8 }, "-=0.8")
           .from(".swag-strip", { y: 30, opacity: 0, duration: 0.8 }, "-=0.6");
 
@@ -36,39 +37,47 @@ const PrizeSection = () => {
                         </span>
                     </h2>
                     <p className="prize-title text-gray-400 text-sm md:text-base max-w-xl mx-auto">
-                        Win from a prize pool of <span className="text-cyan-400 font-bold">₹10,000</span> plus exclusive swags.
+                        Win from a cash prize pool of <span className="text-cyan-400 font-bold">₹10,000</span> plus massive developer perks.
                     </p>
                 </div>
 
+                {/* Main Cash Podium */}
                 <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mb-16 md:items-end">
-                    
-                    <PodiumCard 
-                        rank="2nd Place" amount="₹3,000" color="silver" 
-                        icon={<Trophy className="w-6 h-6 text-gray-300" />} 
-                    />
-
+                    <PodiumCard rank="2nd Place" amount="₹3,000" color="silver" icon={<Trophy className="w-6 h-6 text-gray-300" />} />
                     <div className="order-first md:order-0 relative mb-6 md:mb-0 z-20 podium-card">
                         <div className="absolute -top-10 left-1/2 -translate-x-1/2 animate-bounce">
                             <Crown className="w-10 h-10 text-yellow-400 drop-shadow-[0_0_20px_rgba(250,204,21,0.8)]" fill="currentColor" />
                         </div>
-                        <PodiumCard 
-                            rank="Champion" amount="₹5,000" color="gold" isWinner={true}
-                            icon={<Trophy className="w-8 h-8 text-yellow-900" />} 
-                            isWrapped={true}
-                        />
+                        <PodiumCard rank="Champion" amount="₹5,000" color="gold" isWinner={true} icon={<Trophy className="w-8 h-8 text-yellow-900" />} isWrapped={true} />
                     </div>
+                    <PodiumCard rank="3rd Place" amount="₹2,000" color="bronze" icon={<Trophy className="w-6 h-6 text-orange-400" />} />
+                </div>
 
-                    <PodiumCard 
-                        rank="3rd Place" amount="₹2,000" color="bronze" 
-                        icon={<Trophy className="w-6 h-6 text-orange-400" />} 
+                {/* ElevenLabs Specialized Prizes */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
+                    <RewardCard 
+                        title="All Attendees" 
+                        desc="3 Months Free Creator Tier" 
+                        value="$66 Value" 
+                        icon={<Star className="text-cyan-400" />} 
+                    />
+                    <RewardCard 
+                        title="Best Project (ElevenLabs)" 
+                        desc="6 Months Scale Tier (Each Member)" 
+                        value="$1,980 Value" 
+                        icon={<Mic2 className="text-purple-400" />} 
+                        highlight={true}
+                    />
+                    <RewardCard 
+                        title="Winning Team" 
+                        desc="3 Months Pro Tier (Each Member)" 
+                        value="$297 Value" 
+                        icon={<Zap className="text-yellow-400" />} 
                     />
                 </div>
 
                 <div className="mb-12 flex justify-center items-center">
-                    <div className="category-card group w-full max-w-md p-4 rounded-xl bg-[#13131d] border border-white/5 cursor-default flex items-center gap-4 will-change-transform"
-                         onMouseEnter={(e) => gsap.to(e.currentTarget, { scale: 1.02, borderColor: "#a855f7", backgroundColor: "rgba(168,85,247,0.05)", duration: 0.3 })}
-                         onMouseLeave={(e) => gsap.to(e.currentTarget, { scale: 1, borderColor: "rgba(255,255,255,0.05)", backgroundColor: "#13131d", duration: 0.3 })}
-                    >
+                    <div className="category-card group w-full max-w-md p-4 rounded-xl bg-[#13131d] border border-white/5 cursor-default flex items-center gap-4">
                         <div className="p-2.5 rounded-lg bg-white/5">
                             <Lightbulb className="w-5 h-5 text-yellow-400" />
                         </div>
@@ -79,6 +88,7 @@ const PrizeSection = () => {
                     </div>
                 </div>
 
+                {/* Swag Strip */}
                 <div className="swag-strip w-full rounded-xl bg-linear-to-r from-cyan-900/20 via-purple-900/20 to-pink-900/20 border border-white/10 p-6 backdrop-blur-md">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                         <div className="flex items-center gap-4">
@@ -97,11 +107,24 @@ const PrizeSection = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
     );
 };
+
+const RewardCard = ({ title, desc, value, icon, highlight }) => (
+    <div className={`elevenlabs-card p-5 rounded-2xl border transition-all duration-300 bg-[#0E0F16] ${highlight ? 'border-purple-500/50 shadow-[0_0_20px_rgba(168,85,247,0.1)]' : 'border-white/5'}`}>
+        <div className="flex items-center gap-3 mb-3">
+            <div className="p-2 bg-white/5 rounded-lg">{icon}</div>
+            <span className="text-[10px] font-black uppercase tracking-widest text-gray-500">ElevenLabs Perk</span>
+        </div>
+        <h4 className="text-sm font-bold text-white mb-1 uppercase tracking-tight">{title}</h4>
+        <p className="text-xs text-gray-400 mb-3">{desc}</p>
+        <div className="text-[11px] font-bold text-cyan-400 bg-cyan-400/10 w-fit px-2 py-0.5 rounded uppercase">
+            {value}
+        </div>
+    </div>
+);
 
 const PodiumCard = ({ rank, amount, color, isWinner, icon, isWrapped }) => {
     const styles = {
