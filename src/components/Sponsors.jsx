@@ -8,7 +8,7 @@ const SponsorSection = () => {
             name: "ElevenLabs",
             img: "/sponsors/elevenlabs.png",
             tier: "Platinum Sponsor",
-            meta: "$200K+",
+            meta: "₹200K+",
             label: "Prizes Worth",
             accent: "bg-cyan-500",
             glow: "shadow-[0_0_10px_#22d3ee]",
