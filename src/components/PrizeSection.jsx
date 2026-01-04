@@ -20,7 +20,7 @@ const PrizeSection = () => {
 
         tl.from(".prize-title", { y: 30, opacity: 0, duration: 0.8, ease: "power3.out" })
           .from(".podium-card", { y: 50, opacity: 0, stagger: 0.2, duration: 1, ease: "elastic.out(1, 0.6)" }, "-=0.5")
-          .from(".elevenlabs-card", { y: 20, opacity: 0, stagger: 0.1, duration: 0.8 }, "-=0.4")
+          // Removed .elevenlabs-card from the timeline so they don't animate on scroll
           .from(".category-card", { scale: 0.9, opacity: 0, duration: 0.8 }, "-=0.8")
           .from(".swag-strip", { y: 30, opacity: 0, duration: 0.8 }, "-=0.6");
 
@@ -53,7 +53,7 @@ const PrizeSection = () => {
                     <PodiumCard rank="3rd Place" amount="₹2,000" color="bronze" icon={<Trophy className="w-6 h-6 text-orange-400" />} />
                 </div>
 
-                {/* ElevenLabs Specialized Prizes */}
+                {/* ElevenLabs Specialized Prizes - Static Loading */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
                     <RewardCard 
                         title="All Attendees" 
@@ -113,7 +113,7 @@ const PrizeSection = () => {
 };
 
 const RewardCard = ({ title, desc, value, icon, highlight }) => (
-    <div className={`elevenlabs-card p-5 rounded-2xl border transition-all duration-300 bg-[#0E0F16] ${highlight ? 'border-purple-500/50 shadow-[0_0_20px_rgba(168,85,247,0.1)]' : 'border-white/5'}`}>
+    <div className={`elevenlabs-card p-5 rounded-2xl border transition-all duration-300 bg-[#0E0F16] ${highlight ? 'border-purple-500/50 shadow-[0_0_20px_rgba(168,85,247,0.1)]' : 'border-white/5'} hover:bg-[#161720]`}>
         <div className="flex items-center gap-3 mb-3">
             <div className="p-2 bg-white/5 rounded-lg">{icon}</div>
             <span className="text-[10px] font-black uppercase tracking-widest text-gray-500">ElevenLabs Perk</span>
