@@ -45,7 +45,7 @@ const HeroSection = () => {
 
                 <div className="hero-btn-container flex flex-col items-center mb-10">
                     <a
-                        href="https://forms.gle/oSM5HFeq3WKMZrH98"
+                        href="https://bit.ly/hackrush"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group relative px-10 py-4 max-sm:px-8 max-sm:py-3 rounded-xl font-bold text-lg overflow-hidden cursor-pointer font-display tracking-wide uppercase inline-block shadow-[0_0_30px_rgba(147,51,234,0.3)] transition-transform hover:scale-105 active:scale-95"
