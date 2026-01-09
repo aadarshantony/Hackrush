@@ -31,10 +31,10 @@ const HeroSection = () => {
             ease: "power4.out",
             delay: 0.2
         })
-        .from(".hero-tagline", { y: 20, opacity: 0, duration: 0.8 }, "-=0.8")
-        .from([".hero-sub", ".hero-date"], { y: 20, opacity: 0, duration: 0.8, stagger: 0.1 }, "-=0.6")
-        .from(".hero-btn-container", { scale: 0.9, opacity: 0, duration: 0.6 }, "-=0.4")
-        .from(".hero-prize", { opacity: 0, y: 15, duration: 0.6 }, "-=0.3");
+            .from(".hero-tagline", { y: 20, opacity: 0, duration: 0.8 }, "-=0.8")
+            .from([".hero-sub", ".hero-date"], { y: 20, opacity: 0, duration: 0.8, stagger: 0.1 }, "-=0.6")
+            .from(".hero-btn-container", { scale: 0.9, opacity: 0, duration: 0.6 }, "-=0.4")
+            .from(".hero-prize", { opacity: 0, y: 15, duration: 0.6 }, "-=0.3");
     }, { scope: container });
 
     return (
@@ -95,7 +95,7 @@ const HeroSection = () => {
                     </a>
 
                     <p className="mt-4 text-orange-400/90 text-[10px] md:text-xs font-black uppercase tracking-[0.3em] italic">
-                        Deadline: January 8, 2026
+                        Deadline: January 14, 2026
                     </p>
                 </div>
 
