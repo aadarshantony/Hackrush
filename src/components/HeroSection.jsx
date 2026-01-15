@@ -3,45 +3,29 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import MouseGlow from './MouseGlow';
 import ParticlesBackground from './ParticlesBackground';
+import CountdownTimer from './CountdownTimer';
 
 gsap.registerPlugin(useGSAP);
 
 const HeroSection = () => {
     const container = useRef(null);
 
-    // ✅ GA4 Register Button Click Tracker
-    const trackRegisterClick = () => {
-        if (typeof window !== "undefined" && window.gtag) {
-            window.gtag("event", "register_click", {
-                event_category: "CTA",
-                event_label: "Hero Register Button",
-                link_url: "https://forms.gle/oSM5HFeq3WKMZrH98",
-                section: "hero"
-            });
-        }
-    };
-
     useGSAP(() => {
         const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
         tl.from(".hero-text", {
-            y: 100,
-            opacity: 0,
-            duration: 1.2,
-            stagger: 0.1,
-            ease: "power4.out",
-            delay: 0.2
+            y: 100, opacity: 0, duration: 1.2, stagger: 0.1, ease: "power4.out", delay: 0.2
         })
-            .from(".hero-tagline", { y: 20, opacity: 0, duration: 0.8 }, "-=0.8")
-            .from([".hero-sub", ".hero-date"], { y: 20, opacity: 0, duration: 0.8, stagger: 0.1 }, "-=0.6")
-            .from(".hero-btn-container", { scale: 0.9, opacity: 0, duration: 0.6 }, "-=0.4")
-            .from(".hero-prize", { opacity: 0, y: 15, duration: 0.6 }, "-=0.3");
+        .from(".hero-tagline", { y: 20, opacity: 0, duration: 0.8 }, "-=0.8")
+        .from([".hero-sub", ".hero-date"], { y: 20, opacity: 0, duration: 0.8, stagger: 0.1 }, "-=0.6")
+        .from(".countdown-container", { scale: 0.9, opacity: 0, duration: 0.6 }, "-=0.4")
+        .from(".hero-prize", { opacity: 0, y: 15, duration: 0.6 }, "-=0.3");
     }, { scope: container });
 
     return (
         <main
             ref={container}
             id="home"
-            className="relative grow flex flex-col items-center justify-center text-center px-4 pt-20 min-h-screen overflow-hidden"
+            className="relative grow flex flex-col items-center justify-center text-center px-4 pt-20 min-h-screen overflow-hidden bg-black"
         >
             <div className="absolute inset-0 z-0 pointer-events-none">
                 <ParticlesBackground />
@@ -73,30 +57,13 @@ const HeroSection = () => {
                     <span className="text-cyan-400 font-bold">IEDC</span>, MGMCET Pampakuda
                 </p>
 
-                <div className="hero-date inline-block mb-10 px-8 py-3 max-sm:py-2 rounded-full border border-cyan-500/30 bg-cyan-900/10 backdrop-blur-sm shadow-[0_0_20px_rgba(6,182,212,0.15)]">
-                    <span className="text-cyan-300 text-lg font-display tracking-wider max-sm:text-sm uppercase font-bold italic">
-                        JANUARY 23, 24 · 2026
-                    </span>
-                </div>
-
-                {/* ✅ REGISTER BUTTON WITH TRACKING */}
-                <div className="hero-btn-container flex flex-col items-center mb-10">
-                    <a
-                        href="https://forms.gle/oSM5HFeq3WKMZrH98"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={trackRegisterClick}
-                        className="group relative px-10 py-4 max-sm:px-8 max-sm:py-3 rounded-xl font-bold text-lg overflow-hidden cursor-pointer font-display tracking-wide uppercase inline-block shadow-[0_0_30px_rgba(147,51,234,0.3)] transition-transform hover:scale-105 active:scale-95"
-                    >
-                        <div className="absolute inset-0 bg-linear-to-r from-blue-600 via-purple-600 to-pink-500 opacity-90 transition-opacity group-hover:opacity-100" />
-                        <span className="relative flex items-center gap-2 text-white">
-                            Register Now <span>→</span>
-                        </span>
-                    </a>
-
-                    <p className="mt-4 text-orange-400/90 text-[10px] md:text-xs font-black uppercase tracking-[0.3em] italic">
-                        Deadline: January 14, 2026
+                <div className="countdown-container flex flex-col items-center mb-10">
+                    <p className="text-orange-400/90 text-[10px] md:text-xs font-black uppercase tracking-[0.3em] italic mb-4">
+                        Registrations closed • Sprint starts in:
                     </p>
+                    
+                    {/* The separate timer component prevents the whole page from re-rendering */}
+                    <CountdownTimer targetDate="January 23, 2026 16:00:00" />
                 </div>
 
                 <div className="hero-prize bg-white/[0.03] border border-white/10 backdrop-blur-md px-10 py-5 rounded-2xl">
