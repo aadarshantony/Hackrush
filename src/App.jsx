@@ -15,8 +15,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/code-of-conduct" element={<CodeOfConduct />} />
-          <Route path="/rules" element={<Rules />} />
-          
+          <Route path="/rules" element={<Rules />} />  
           <Route path="*" element={<NotFound />} />
         </Routes>
       </SmoothScroll>

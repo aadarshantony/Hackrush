@@ -1,63 +1,132 @@
-import React, { useRef } from 'react';
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Lightbulb, Lock, Timer } from 'lucide-react';
-
-gsap.registerPlugin(ScrollTrigger);
+import React from 'react';
+import { 
+    GraduationCap, 
+    HeartPulse, 
+    Leaf, 
+    Users, 
+    BrainCircuit, 
+    TrendingUp, 
+    Zap, 
+    Sparkles, 
+    Lightbulb 
+} from 'lucide-react';
 
 const ThemesSection = () => {
-    const container = useRef(null);
-
-    useGSAP(() => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: container.current,
-                start: "top 85%",
-                toggleActions: "play none none reverse"
-            }
-        });
-
-        tl.from(".section-title", { y: 30, opacity: 0, duration: 0.8, ease: "power3.out" })
-          .from(".hint-box", { y: 20, opacity: 0, duration: 0.8 }, "-=0.6")
-          .from(".lock-card", { scale: 0.9, opacity: 0, duration: 0.6, ease: "back.out(1.7)" }, "-=0.4");
-
-    }, { scope: container });
+    const themes = [
+        {
+            title: "Campus & Student Life",
+            description: "Better learning, smart campus solutions, and student utilities.",
+            icon: <GraduationCap className="w-7 h-7" />,
+            iconColor: "text-cyan-400",
+            border: "group-hover:border-cyan-400/50",
+            bg: "group-hover:bg-cyan-400/10"
+        },
+        {
+            title: "Healthcare & Wellness",
+            description: "Med-tech, mental health apps, and fitness trackers.",
+            icon: <HeartPulse className="w-7 h-7" />,
+            iconColor: "text-pink-500",
+            border: "group-hover:border-pink-500/50",
+            bg: "group-hover:bg-pink-500/10"
+        },
+        {
+            title: "Environment & Sustainability",
+            description: "Eco-friendly tech, waste management, and energy efficiency.",
+            icon: <Leaf className="w-7 h-7" />,
+            iconColor: "text-green-500",
+            border: "group-hover:border-green-500/50",
+            bg: "group-hover:bg-green-500/10"
+        },
+        {
+            title: "Society & Community",
+            description: "Tech for social good, connectivity, and public services.",
+            icon: <Users className="w-7 h-7" />,
+            iconColor: "text-orange-500",
+            border: "group-hover:border-orange-500/50",
+            bg: "group-hover:bg-orange-500/10"
+        },
+        {
+            title: "AI & Machine Learning",
+            description: "Intelligent systems, automation, and predictive models.",
+            icon: <BrainCircuit className="w-7 h-7" />,
+            iconColor: "text-purple-500",
+            border: "group-hover:border-purple-500/50",
+            bg: "group-hover:bg-purple-500/10"
+        },
+        {
+            title: "Finance & Commerce",
+            description: "Fintech, secure payments, and e-commerce solutions.",
+            icon: <TrendingUp className="w-7 h-7" />,
+            iconColor: "text-yellow-500",
+            border: "group-hover:border-yellow-500/50",
+            bg: "group-hover:bg-yellow-500/10"
+        },
+        {
+            title: "Lifestyle & Creativity",
+            description: "Productivity tools, art tech, and entertainment.",
+            icon: <Zap className="w-7 h-7" />,
+            iconColor: "text-fuchsia-500",
+            border: "group-hover:border-fuchsia-500/50",
+            bg: "group-hover:bg-fuchsia-500/10"
+        },
+        {
+            title: "Open Innovation",
+            description: "Got a unique idea? Build anything that solves a problem!",
+            icon: <Sparkles className="w-7 h-7" />,
+            iconColor: "text-white",
+            border: "group-hover:border-white/50",
+            bg: "group-hover:bg-white/10"
+        }
+    ];
 
     return (
-        <section ref={container} id="themes" className="relative w-full bg-[#0e0c16] py-16 px-4 overflow-hidden">
-            <div className="max-w-4xl mx-auto relative z-10 text-center">
+        <section id="themes" className="relative w-full bg-[#0E0C16] py-20 px-4">
+            <div className="max-w-7xl mx-auto">
                 
-                <h2 className="themes uppercase font-display text-3xl md:text-5xl font-black text-white mb-8 tracking-wide">
-                    Hackathon <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-purple-500 drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]">Themes</span>
-                </h2>
-
-                <div className="hint-box font-sans inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10 mb-12">
-                    <Lightbulb className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                    <p className="text-gray-300 text-sm md:text-base font-medium">
-                        Hint: Your project should solve a <span className="text-white font-bold underline decoration-purple-500 underline-offset-4">real-life problem</span>.
-                    </p>
-                </div>
-
-                <div 
-                    className="lock-card p-10 rounded-3xl bg-[#13131d] border border-white/10 flex flex-col items-center justify-center space-y-6 relative overflow-hidden group cursor-default will-change-transform"
-                    onMouseEnter={(e) => gsap.to(e.currentTarget, { scale: 1.02, borderColor: "#22d3ee", boxShadow: "0 0 30px rgba(34,211,238,0.1)", duration: 0.3 })}
-                    onMouseLeave={(e) => gsap.to(e.currentTarget, { scale: 1, borderColor: "rgba(255,255,255,0.1)", boxShadow: "none", duration: 0.3 })}
-                >
-                    <div className="relative">
-                        <div className="absolute inset-0 bg-cyan-500/10 rounded-full blur-xl"></div>
-                        <Lock className="w-14 h-14 text-cyan-400 relative z-10" />
-                    </div>
-
-                    <div className="space-y-2">
-                        <h3 className="text-2xl font-bold text-white font-display">
-                            Themes are currently <span className="text-cyan-400">Locked</span>
-                        </h3>
-                        <p className="text-gray-400 text-base flex items-center justify-center gap-2">
-                            <Timer className="w-4 h-4" />
-                            Will be revealed 24 hours before the hackathon.
+                {/* Header & Hint */}
+                <div className="text-center mb-16">
+                    {/* Updated to bg-linear-to-r for Tailwind v4 */}
+                    <h2 className="text-4xl md:text-6xl font-black text-white mb-6 uppercase tracking-wide">
+                        Hackathon <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-purple-500 drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]">Themes</span>
+                    </h2>
+                    
+                    {/* The Hint Box */}
+                    <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-md animate-pulse">
+                        <Lightbulb className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                        <p className="text-gray-300 text-sm md:text-base font-medium">
+                            Hint: Your project should solve a <span className="text-white font-bold underline decoration-purple-500 underline-offset-4">real-life problem</span>.
                         </p>
                     </div>
+                </div>
+
+                {/* Grid Layout */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {themes.map((theme, index) => (
+                        <div 
+                            key={index} 
+                            className={`p-6 rounded-2xl bg-[#13131d] border border-white/5 transition-all duration-300 group hover:-translate-y-2 hover:shadow-lg ${theme.border} flex flex-col h-full relative overflow-hidden`}
+                        >
+                            {/* Icon Box: 
+                                - bg-white/5 for uniform grey background
+                                - theme.iconColor applies the specific color to the icon text/outline
+                            */}
+                            <div className={`w-14 h-14 rounded-xl mb-5 flex items-center justify-center bg-white/5 ${theme.iconColor} shadow-sm group-hover:scale-110 transition-transform duration-300`}>
+                                {theme.icon}
+                            </div>
+                            
+                            {/* Updated title hover to bg-linear-to-r */}
+                            <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-white group-hover:to-gray-400 transition-all">
+                                {theme.title}
+                            </h3>
+                            
+                            <p className="text-gray-400 text-sm leading-relaxed">
+                                {theme.description}
+                            </p>
+                            
+                            {/* Subtle background glow on hover */}
+                            <div className={`absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 pointer-events-none ${theme.bg}`}></div>
+                        </div>
+                    ))}
                 </div>
 
             </div>
