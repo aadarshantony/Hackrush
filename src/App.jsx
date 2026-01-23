@@ -6,6 +6,7 @@ import NotFound from './pages/NotFound';
 import CodeOfConduct from './pages/CodeOfConduct';
 import ScrollToAnchor from './components/ScrollToAnchor';
 import Rules from './pages/Rules';
+import LEDWallDashboard from './pages/LEDWallDashboard'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/code-of-conduct" element={<CodeOfConduct />} />
           <Route path="/rules" element={<Rules />} />  
+          <Route path="/ledwall" element={<LEDWallDashboard />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </SmoothScroll>
