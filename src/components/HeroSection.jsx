@@ -3,7 +3,6 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import MouseGlow from './MouseGlow';
 import ParticlesBackground from './ParticlesBackground';
-import CountdownTimer from './CountdownTimer';
 
 gsap.registerPlugin(useGSAP);
 
@@ -16,9 +15,8 @@ const HeroSection = () => {
             y: 100, opacity: 0, duration: 1.2, stagger: 0.1, ease: "power4.out", delay: 0.2
         })
         .from(".hero-tagline", { y: 20, opacity: 0, duration: 0.8 }, "-=0.8")
-        .from([".hero-sub", ".hero-date"], { y: 20, opacity: 0, duration: 0.8, stagger: 0.1 }, "-=0.6")
-        .from(".countdown-container", { scale: 0.9, opacity: 0, duration: 0.6 }, "-=0.4")
-        .from(".hero-prize", { opacity: 0, y: 15, duration: 0.6 }, "-=0.3");
+        .from(".hero-sub", { y: 20, opacity: 0, duration: 0.8 }, "-=0.6")
+        .from(".status-badge", { scale: 0.8, opacity: 0, duration: 0.6, ease: "back.out(1.7)" }, "-=0.4");
     }, { scope: container });
 
     return (
@@ -44,41 +42,33 @@ const HeroSection = () => {
                 </h1>
 
                 <div className="hero-tagline text-lg md:text-2xl font-light tracking-widest mb-5 space-x-4 font-display uppercase max-sm:text-sm">
-                    <span className="text-cyan-300">Innovate</span>
+                    <span className="text-cyan-300">Innovated</span>
                     <span className="text-gray-500">•</span>
-                    <span className="text-purple-400">Build</span>
+                    <span className="text-purple-400">Built</span>
                     <span className="text-gray-500">•</span>
-                    <span className="text-pink-400">Rush Beyond Limits</span>
+                    <span className="text-pink-400">Rushed Beyond Limits</span>
                 </div>
 
-                <p className="hero-sub text-gray-400 mb-8 max-w-xl mx-auto text-lg max-sm:text-sm leading-relaxed">
-                    A 16-hour hackathon by{" "}
+                <p className="hero-sub text-gray-400 mb-12 max-w-xl mx-auto text-lg max-sm:text-sm leading-relaxed">
+                    The 16-hour sprint by{" "}
                     <span className="text-cyan-400 font-bold">Etcetera Club</span> &{" "}
                     <span className="text-cyan-400 font-bold">IEDC</span>, MGMCET Pampakuda
+                    <br /> has officially come to an end.
                 </p>
 
-                <div className="countdown-container flex flex-col items-center mb-10">
-                    <p className="text-orange-400/90 text-[10px] md:text-xs font-black uppercase tracking-[0.3em] italic mb-4">
-                        Registrations closed • Sprint starts in:
-                    </p>
-                    
-                    {/* The separate timer component prevents the whole page from re-rendering */}
-                    <CountdownTimer targetDate="January 23, 2026 16:00:00" />
-                </div>
-
-                <div className="hero-prize bg-white/[0.03] border border-white/10 backdrop-blur-md px-10 py-5 rounded-2xl">
-                    <p className="text-gray-400 text-xs md:text-sm font-medium uppercase tracking-[0.2em] mb-1">
-                        Total Rewards Worth{" "}
-                        <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 via-white to-purple-400 font-black text-xl md:text-2xl drop-shadow-[0_0_10px_rgba(34,211,238,0.4)]">
-                            ₹2,00,000+
+                {/* Event Status Indicator */}
+                <div className="status-badge group flex flex-col items-center">
+                    <div className="px-8 py-3 rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-md shadow-2xl">
+                        <span className="text-gray-400 text-sm md:text-base font-bold uppercase tracking-[0.4em] flex items-center gap-3">
+                            <span className="relative flex h-3 w-3">
+                                <span className="absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-20"></span>
+                                <span className="relative inline-flex rounded-full h-3 w-3 bg-red-600/80"></span>
+                            </span>
+                            Mission Accomplished
                         </span>
-                    </p>
-                    <p className="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-[0.1em]">
-                        PLUS{" "}
-                        <span className="text-white font-black underline decoration-cyan-500/50 underline-offset-4">
-                            ₹10,000 CASH
-                        </span>{" "}
-                        PRIZE POOL
+                    </div>
+                    <p className="mt-6 text-gray-500 text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
+                        See you in the next edition
                     </p>
                 </div>
             </div>
